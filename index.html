@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>final project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <h2 id="logo">Notes</h2>
+            <button class="create primary">
+                <img class="icon" src="plus.svg" alt="">
+                Create
+            </button>
+        </div>
+    </nav>
+    <div class="empty-state">
+        <img src="./notes.webp" alt=""> 
+        <p>No notes yet. Create one!</p>
+    </div>
+
+    <form id="creation-form" action="./backend/form.php" method="post">
+        <h3>What's on your mind</h3>
+        <input class="title-input" type="text" name="title" placeholder="Heading">
+        <textarea name="description" id="description" placeholder="Description"></textarea>
+        <button class="primary">
+            Create
+        </button>
+    </form>
+
+    <form id="updation-form" action="./backend/api/update.php" method="post">
+        <h3>What's on your mind</h3>
+        <input type="text" style="display: none">
+        <input class="title-input" type="text" name="title" placeholder="Heading">
+        <textarea name="description" id="description" placeholder="Description"></textarea>
+        <button class="primary">
+            update
+        </button>
+    </form>
+
+    <div class="backdrop"></div>
+    <div class="container">
+        <div class="notes">
+
+        </div>
+
+    </div>
+
+</body>
+<script src="./app.js"></script>
+<script src="./form.js"></script>
+
+</html>
