@@ -2,7 +2,7 @@ const deleteConfirmation = document.querySelector('.confirmation');
 const deleteNoteBtn = document.querySelector('.confirmation button.primary');
 const keepNoteBtn = document.querySelector('.confirmation button.secondary');
 
-fetch('http://localhost/final%20project/backend/api/notes.php')
+fetch('http://localhost/final-project/backend/api/notes.php')
     .then(res => res.json())
     .then(data => {
         if (!data || data.length === 0) {
@@ -81,7 +81,7 @@ function deleteNote(id) {
     const formData = new FormData();
     formData.append('id', id);
 
-    fetch('http://localhost/final%20project/backend/api/delete.php', {
+    fetch('http://localhost/final-project/backend/api/delete.php', {
         method: 'POST',
         body: formData
     })
