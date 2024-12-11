@@ -9,6 +9,8 @@ fetch('http://localhost/final%20project/backend/api/notes.php')
             console.log('No data found');
             document.querySelector('.empty-state').classList.add('active');
         } else {
+            data.sort((a,b)=>a.s_no - b.s_no);
+            console.log(data);
             renderNotes(data);
         }
     })
