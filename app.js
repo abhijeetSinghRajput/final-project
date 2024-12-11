@@ -1,3 +1,7 @@
+const deleteConfirmation = document.querySelector('.confirmation');
+const deleteNoteBtn = document.querySelector('.confirmation button.primary');
+const keepNoteBtn = document.querySelector('.confirmation button.secondary');
+
 fetch('http://localhost/final%20project/backend/api/notes.php')
     .then(res => res.json())
     .then(data => {
@@ -10,14 +14,17 @@ fetch('http://localhost/final%20project/backend/api/notes.php')
     })
     .catch(error => console.error('Error fetching data:', error));
 
-
+const colors = ["#d7e4fd", "#f7fcd4", "#d9fbf0", "#fdf5bd", "#cfd2f7", "#fce6d9"];
 
 function renderNotes(notes) {
     const notesElement = document.querySelector('.notes');
-    notes.forEach(({ s_no, title, description }) => {
+    notes.forEach(({ s_no, title, description }, index) => {
         notesElement.innerHTML += getNoteElement(s_no, title, description)
     })
 
+    document.querySelectorAll('.note').forEach((note, index) => {
+        note.style.backgroundColor = colors[index % colors.length];
+    })
     const menuToggles = document.querySelectorAll('.menu-toggle');
 
     menuToggles.forEach(toggler => {
@@ -53,10 +60,19 @@ function renderNotes(notes) {
     document.querySelectorAll('.delete-note').forEach(btn => {
         btn.addEventListener('click', () => {
             const id = btn.closest('.note').id;
-            deleteNote(id);
+            deleteConfirmation.setAttribute('note-id', id);
+            deleteConfirmation.classList.add('active');
+            // deleteNote(id);
         })
     })
 }
+keepNoteBtn.addEventListener('click', ()=>{
+    deleteConfirmation.classList.remove('active');
+})
+deleteNoteBtn.addEventListener('click', ()=>{
+    deleteNote(+deleteConfirmation.getAttribute('note-id'));
+})
+
 
 
 function deleteNote(id) {

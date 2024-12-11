@@ -15,17 +15,21 @@ function closeForm(form){
     form.classList.remove('active');
 }
 
-createBtn.addEventListener('click', ()=>openForm(creationForm));
+createBtn.addEventListener('click', ()=>{
+    closeForm(updationForm);
+    openForm(creationForm);
+});
+
 backdrop.addEventListener('click', ()=>{
     closeForm(creationForm);
     closeForm(updationForm);
 });
 
 function validateForm(form){
-    if(form.querySelector('.title-input').value.trime().length == 0){
+    if(form.querySelector('.title-input').value.trim().length == 0){
         return false;
     }
-    if(form.querySelector('textarea').value.trime().length == 0){
+    if(form.querySelector('textarea').value.trim().length == 0){
         return false;
     }
     return true;

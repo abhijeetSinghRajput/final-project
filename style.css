@@ -37,10 +37,57 @@ nav .container {
     justify-content: space-between;
     padding: 8px;
 }
+.confirmation{
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.195);
+    display: none;
+    padding: 20px;
+    border-radius: 30px;
+    width: 300px;
+    white-space: nowrap;
+    z-index: 100;
+}
+.confirmation.active{
+    display: block;
+}
+.confirmation .icon{
+    margin: auto;
+    width: 50px;
+}
+.confirmation h4{
+    margin-top: 10px;
+}
+.confirmation p{
+    margin-bottom: 20px;
+    color: gray;
+    font-size: 14px;
+}
+.confirmation .flex{
+    gap: 10px;
+}
 
+.confirmation button{
+    border-radius: 50px;
+    padding: 8px 16px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.flex{
+    display: flex;
+}
 .icon {
     aspect-ratio: 1;
     width: 26px;
+    flex-shrink: 0;
 }
 .icon img{
     width: 100%;
@@ -61,6 +108,7 @@ button {
     gap: 4px;
     align-items: center;
 }
+
 .empty-state.active{
     display: block;
 }
@@ -76,12 +124,22 @@ button {
     transform: translate(-50%, -50%);
     text-align: center;
     display: none;
+    user-select: none;
 }
 .empty-state img{
     object-fit: contain;
     width: 100%;
 }
 
+button.secondary,
+.btn.secondary{
+    border: 2px solid royalblue;
+    color: royalblue;
+}
+button.secondary:hover,
+.btn.secondary:hover{
+    background-color: rgba(65, 105, 225, 0.1);
+}
 button.primary,
 .btn.primary {
     color: white;
@@ -117,7 +175,7 @@ button:hover,
 .note header{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
 }
 
 .note header .menu-toggle{
@@ -167,6 +225,7 @@ button:hover,
 pre{
     white-space: pre-wrap;
 }
+
 form{
     position: fixed;
     background-color: white;
@@ -226,4 +285,14 @@ textarea{
 textarea{
     min-height: 120px;
     resize: vertical;
+}
+
+@media screen and (max-width: 500px) {
+    .container{
+        padding: 0 10px;
+    }
+    .notes{
+        padding: 0;
+        gap: 10px;
+    }
 }
