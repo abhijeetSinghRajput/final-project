@@ -13,17 +13,17 @@
         <div class="container">
             <h2 id="logo">Notes</h2>
             <button class="create primary">
-                <img class="icon" src="plus.svg" alt="">
+                <img class="icon" src="./assets/icons/plus.svg" alt="">
                 Create
             </button>
         </div>
     </nav>
     <div class="empty-state">
-        <img src="./notes.webp" alt="">
+        <img src="./assets/notes.webp" alt="">
         <p>No notes yet. Create one!</p>
     </div>
 
-    <form id="creation-form" action="./backend/form.php" method="post">
+    <form id="creation-form" action="../backend/form.php" method="post">
         <h3>What's on your mind</h3>
         <input class="title-input" type="text" name="title" placeholder="Heading">
         <textarea name="description" id="description" placeholder="Description"></textarea>
@@ -33,7 +33,7 @@
     </form>
     <div class="confirmation">
         <div class="icon">
-            <img src="./warning.png" alt="">
+            <img src="./assets/icons/warning.png" alt="">
         </div>
         <h4>Delete Note</h4>
         <p>Are you sure to delte</p>
@@ -42,7 +42,7 @@
             <button class="primary">Delete</button>
         </div>
     </div>
-    <form id="updation-form" action="./backend/api/update.php" method="post">
+    <form id="updation-form" action="../backend/api/update.php" method="post">
         <h3>What's on your mind</h3>
         <input name="id" type="text" style="display: none">
         <input class="title-input" type="text" name="title" placeholder="Heading">
@@ -66,7 +66,7 @@
     </div>
 
 </body>
-<script src="./app.js"></script>
-<script src="./form.js"></script>
+<script src="./javascript/app.js"></script>
+<script src="./javascript/form.js"></script>
 
 </html>

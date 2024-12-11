@@ -97,14 +97,14 @@ const getNoteElement = function (id, title, description) {
         <header>
             <h3 class="title">${title}</h3>
             <div class="menu-toggle icon">
-                <img src="./dot-menu.svg" alt="menu-icon">
+                <img src="./assets/icons/dot-menu.svg" alt="menu-icon">
                 <ul class="menu">
                     <li class="edit-note">
-                        <img class="icon" src="./pencil.svg" alt="">
+                        <img class="icon" src="./assets/icons/pencil.svg" alt="">
                         edit
                     </li>
                     <li class="delete-note">
-                        <img class="icon" src="./bin.svg" alt="">
+                        <img class="icon" src="./assets/icons/bin.svg" alt="">
                         delete
                     </li>
                 </ul>

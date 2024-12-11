@@ -14,7 +14,7 @@
         }
         
         //redirection to the frontend
-        header('location: http://localhost/final%20project/');
+        header('location: http://localhost/final project/frontend');
     }
     catch(PDOException $e){
         echo "Error: ", $e->getMessage();
