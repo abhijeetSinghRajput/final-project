@@ -7,8 +7,8 @@
             isset($_POST["description"])
             ){
                 $id = $_POST["id"];
-                $title = $_POST["title"];
-                $description = $_POST["description"];
+                $title = addslashes($_POST["title"]);
+                $description = addslashes($_POST["description"]);
                 
                 $query = "UPDATE notes SET title = '$title', description = '$description' WHERE s_no = $id";
                 $connection->query($query);

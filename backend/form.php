@@ -5,8 +5,8 @@
 
     try{
         if (isset($_POST["title"]) && isset($_POST["description"])) {
-            $title =  $_POST["title"];
-            $description =  $_POST["description"];
+            $title =  addslashes($_POST["title"]);
+            $description =  addslashes($_POST["description"]);
             
             // insert into the table
             $query = "INSERT INTO notes (title, description) VALUES ('$title', '$description')";
