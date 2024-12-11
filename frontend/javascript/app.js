@@ -42,9 +42,9 @@ function renderNotes(notes) {
         ) {
             return;
         }
-
+        console.log(event.target.contains(deleteConfirmation));
         if(!event.target.classList.contains('delete-note') &&
-        !event.target.contains(deleteConfirmation)){
+        !event.target.closest('.confirmation')){
             deleteConfirmation.classList.remove('active');
         }
 
