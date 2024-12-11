@@ -10,7 +10,6 @@ fetch('http://localhost/final-project/backend/api/notes.php')
             document.querySelector('.empty-state').classList.add('active');
         } else {
             data.sort((a,b)=>a.s_no - b.s_no);
-            console.log(data);
             renderNotes(data);
         }
     })
@@ -37,11 +36,18 @@ function renderNotes(notes) {
     })
 
     document.addEventListener('click', function (event) {
+        
         if (event.target.classList.contains('menu-toggle') ||
             event.target.parentElement?.classList.contains('menu-toggle')
         ) {
             return;
         }
+
+        if(!event.target.classList.contains('delete-note') &&
+        !event.target.contains(deleteConfirmation)){
+            deleteConfirmation.classList.remove('active');
+        }
+
         menuToggles.forEach(toggler => {
             toggler.classList.remove('active');
         })
